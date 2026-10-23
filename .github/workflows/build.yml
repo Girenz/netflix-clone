@@ -13,6 +13,7 @@ jobs:
         with:
           flutter-version: 3.29.3
       - run: flutter pub get
+      - run: yes | flutter doctor --android-licenses || true
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
